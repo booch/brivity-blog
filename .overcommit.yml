@@ -1,0 +1,44 @@
+gemfile: Gemfile
+
+
+PreCommit:
+
+  ALL:
+    on_warn: fail
+
+  BundleCheck:
+    enabled: true
+
+  RuboCop:
+    enabled: true
+    command: ["bundle", "exec", "rubocop", "--disable-pending-cops"]
+
+  YamlSyntax:
+    enabled: true
+
+  LineEndings:
+    enabled: true
+
+  TrailingWhitespace:
+    enabled: true
+
+
+CommitMsg:
+
+  TextWidth:
+    enabled: true
+    max_subject_width: 72
+    min_subject_width: 10
+    max_body_width: 80
+
+  HardTabs:
+    enabled: true
+
+  RussianNovel:
+    enabled: true
+
+
+PrePush:
+
+  ProtectedBranches:
+    enabled: true

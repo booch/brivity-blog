@@ -1,0 +1,52 @@
+---
+
+require:
+  - rubocop-rspec
+  - rubocop-rails
+  - rubocop-performance
+
+inherit_from:
+  - https://raw.githubusercontent.com/booch/config_files/master/ruby/rubocop.yml
+
+# Ignore some files, and any new cops. NOTE: Exclude does not add to any existing Exclude directives.
+AllCops:
+  NewCops: disable
+  Exclude:
+    - 'vendor/**/*'
+    - 'bin/bundle'
+
+# Use `{}` for blocks that return a value; otherwise use `do` and `end`.
+# We make a few exceptions, mostly for RSpec. And for grammar and transform rules.
+Style/BlockDelimiters:
+  EnforcedStyle: semantic
+  FunctionalMethods:
+    - expect
+  IgnoredMethods:
+    - git_source
+    - let
+    - let!
+    - subject
+
+# Exclude some Rails files from certain rules.
+Layout/SpaceInsidePercentLiteralDelimiters:
+  Exclude:
+    - 'Gemfile'
+    - 'config/environments/*'
+Layout/SpaceInsideArrayLiteralBrackets:
+  Exclude:
+    - 'config/environments/*'
+Style/RedundantFetchBlock:
+  Enabled: false
+
+# Be a bit more lenient with RSpec: don't require filename to match class; allow more than 1 expectation per example.
+RSpec/FilePath:
+  Enabled: false
+RSpec/MultipleExpectations:
+  Max: 10
+RSpec/ExampleLength:
+  Max: 10
+
+Layout/EmptyLinesAroundClassBody:
+  Enabled: false
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: false
