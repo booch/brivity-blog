@@ -14,6 +14,12 @@ AllCops:
   Exclude:
     - 'vendor/**/*'
     - 'bin/bundle'
+    - 'config/initializers/devise.rb'
+    - 'db/schema.rb'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'db/migrate/**/*'
 
 # Use `{}` for blocks that return a value; otherwise use `do` and `end`.
 # We make a few exceptions, mostly for RSpec. And for grammar and transform rules.
