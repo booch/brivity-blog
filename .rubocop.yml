@@ -32,6 +32,8 @@ Style/BlockDelimiters:
     - let
     - let!
     - subject
+  Exclude:
+    - 'spec/factories/*'
 
 # Exclude some Rails files from certain rules.
 Layout/SpaceInsidePercentLiteralDelimiters:
