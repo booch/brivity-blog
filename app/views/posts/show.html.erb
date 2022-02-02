@@ -1,0 +1,11 @@
+<%= render @post %>
+
+<div>
+  <%= link_to "Back to posts", posts_path %>
+  <br>
+  <% if user_signed_in? %>
+    <%= link_to "Edit this post", edit_post_path(@post) %>
+    <br>
+    <%= button_to "Delete this post", @post, method: :delete %>
+  <% end %>
+</div>
