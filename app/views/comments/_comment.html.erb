@@ -1,0 +1,11 @@
+<div id="<%= dom_id comment %>">
+  <section class="comment">
+    <div class="byline">
+      by <%= comment.author.name %>
+      on <time datetime="<%= comment.created_at.strftime("%Y-%m-%d") %>"><%= comment.created_at.strftime("%B %-m, %Y") %></time>
+    </div>
+    <br>
+    <%= comment.body %>
+  </section>
+  <br>
+</div>
