@@ -8,7 +8,7 @@
     <br>
     <%= post.body %>
     <br><br>
-    <%= render post.comments %>
+    <%= render post.comments.order(created_at: :asc) %>
     <% if user_signed_in? %>
       <hr>
       <%= link_to "New comment", new_post_comment_path(post_id: post.id) %>
